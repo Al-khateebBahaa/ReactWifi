@@ -80,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
         mNetworkOne = findViewById(R.id.ssid1_edit_text);
         mPasswordOne = findViewById(R.id.password1_edit_text);
 
+        mBaseNetwork = mNetworkOne.getText().toString();
+        mBaseNetworkPassword = mPasswordOne.getText().toString();
 
     }
 
@@ -102,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     public void connect(View view) {
 
 
-        //if (validateViews()) {
+        if (validateViews())
         //   if (scanForNetworks())
         if (reconnectWIFI("wep2", mBaseNetwork, mBaseNetworkPassword)) {
             Toast.makeText(this, "connecting with " + mBaseNetwork, Toast.LENGTH_SHORT).show();
